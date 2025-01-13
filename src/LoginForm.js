@@ -19,7 +19,7 @@ const LoginForm = () => {
 
         try {
             // ✅ Send login request to the backend
-            const response = await axios.post("http://localhost:5000/", { email, password });
+            const response = await axios.post("https://invoice-api-m6ei.onrender.com/", { email, password });
            console.log(response)
             // ✅ On success, navigate to the home page
             navigate("/home");
