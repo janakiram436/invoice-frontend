@@ -9,7 +9,7 @@ const HomePage = () => {
 
   // Fetch invoices from the backend
   useEffect(() => {
-    axios("http://localhost:5000/home")
+    axios("https://invoice-api-m6ei.onrender.com/home")
       .then((res) => {
         setInvoices(res.data);
       })
@@ -28,7 +28,7 @@ const HomePage = () => {
   const handleDeleteInvoice = (invoiceId) => {
     if (window.confirm("Are you sure you want to delete this invoice?")) {
       axios
-        .delete(`http://localhost:5000/delete/${invoiceId}`)
+        .delete(`https://invoice-api-m6ei.onrender.com/delete/${invoiceId}`)
         .then((res) => {
           console.log("Invoice successfully deleted");
           setInvoices(arrayOfInvoices.filter((invoice) => invoice._id !== invoiceId));
