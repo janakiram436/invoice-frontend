@@ -31,7 +31,7 @@ const SignUp = () => {
 
     // Send POST request to the backend to save the new user
     axios
-      .post("http://localhost:5000/users", newUser)
+      .post("https://invoice-api-m6ei.onrender.com/users", newUser)
       .then((res) => {
         setUsers([...users, newUser]);  // Update users state
         setEmail("");
