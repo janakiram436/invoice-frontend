@@ -19,7 +19,7 @@ const InvoiceFormPage = () => {
   // Load existing invoice data if in update mode
   useEffect(() => {
     if (state?.mode === "update" && state?.id) {
-      axios.get(`http://localhost:5000/invoice/${state.id}`)
+      axios.get(`https://invoice-api-m6ei.onrender.com/invoice/${state.id}`)
         .then((res) => {
           setFormData(res.data);
         })
@@ -32,14 +32,14 @@ const InvoiceFormPage = () => {
     e.preventDefault();
 
     if (state?.mode === "add") {
-      axios.post("http://localhost:5000/add", formData)
+      axios.post("https://invoice-api-m6ei.onrender.com/add", formData)
         .then(() => {
           console.log("Invoice successfully added");
           navigate("/home");
         })
         .catch((err) => console.error("Error:", err));
     } else if (state?.mode === "update" && state?.id) {
-      axios.put(`http://localhost:5000/update/${state.id}`, formData)
+      axios.put(`https://invoice-api-m6ei.onrender.com/update/${state.id}`, formData)
         .then(() => {
           console.log("Invoice successfully updated");
           navigate("/home");
